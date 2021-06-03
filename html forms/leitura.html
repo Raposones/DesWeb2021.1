@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>HTML Forms - Leitura</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <div class="cabecalho">
+            <h1> Desenvolvimento Web - 2021.1</h1>
+            <h2> TP2 - HTML forms</h2>
+            <h3> Visualização de pessoa</h3>
+        </div>
+        <hr>
+
+
+
+        <div class="infos">
+            <form name="info" method="GET">
+            <label for="name">Nome:</label><br>
+            <input type="text" id="name" name="name" readonly> <br><br>
+
+            <label for="age">Idade:</label><br>
+            <input type="number" id="age" name="age" readonly> <br><br>
+
+            <label for="gender">Gênero:</label><br>
+            <input type="text" id="gender" name="gender" readonly> <br><br>
+
+            <label for="email">Email:</label><br>
+            <input type="text" id="email" name="email" readonly> <br><br>
+
+            <label for="phone">Telefone:</label><br>
+            <input type="text" id="phone" name="phone" readonly> <br><br>
+
+            <label for="birthday">Data de nascimento (AAAA-MM-DD):</label><br>
+            <input type="text" id="birthday" name="birthday" readonly> <br><br>
+
+            <label for="description"> Descrição:</label><br>
+            <textarea id="description" name="description" rows="5" readonly></textarea><br><br>
+
+            <input type="submit" formaction="atualizacao.html" value="Alterar dados">
+            <input type="submit" formaction="exclusao.html" value="Excluir dados">
+        </form>
+        </div>
+
+        <br><br>
+        <form action="cadastro.html">
+            <input type="submit" value="Novo cadastro">
+        </form>
+    </body>
+
+    <script type="text/javascript">
+        function getParameterByName(name, url = window.location.href) {
+        name = name.replace(/[\[\]]/g, '\\$&');
+        var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+            results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, ' '));
+        }
+
+        var name = getParameterByName("name");
+        var age = getParameterByName("age");
+        var gender = getParameterByName("gender");
+        var email = getParameterByName("email");
+        var phone = getParameterByName("phone");
+        var birthday = getParameterByName("birthday");
+        var description = getParameterByName("description");
+
+        document.getElementById("name").value = name;
+        document.getElementById("age").value = age;
+        document.getElementById("gender").value = gender;
+        document.getElementById("email").value = email;
+        document.getElementById("phone").value = phone;
+        document.getElementById("birthday").value = birthday;
+        document.getElementById("description").value = description;
+    </script>
+</html>

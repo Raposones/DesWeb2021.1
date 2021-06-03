@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>HTML Forms - Cadastro</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <div class="cabecalho">
+            <h1> Desenvolvimento Web - 2021.1</h1>
+            <h2> TP2 - HTML forms</h2>
+            <h3> Cadastro de Pessoa</h3>
+        </div>
+        <hr>
+
+        <div class="forms">
+            <form action="leitura.html" method="GET">
+                <label for="name">Nome:</label><br>
+                <input type="text" id="name" name="name" placeholder="Qual seu nome?"> <br><br>
+
+                <label for="age">Idade:</label><br>
+                <input type="number" id="age" name="age" placeholder="Qual sua idade?"> <br><br>
+
+                <label for="gender">Gênero:</label><br>
+                <input type="radio" id="male" name="gender" value="Masculino">
+                <label for="male">Masculino</label> <br>
+                <input type="radio" id="female" name="gender" value="Feminino">
+                <label for="female">Feminino</label> <br>
+                <input type="radio" id="other" name="gender" value="Outro">
+                <label for="other">Outro</label> <br><br>
+
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email" placeholder="exemplo@exemplo.com"> <br><br>
+
+                <label for="phone">Telefone:</label><br>
+                <input type="tel" id="phone" name="phone" placeholder="00000000"> <br><br>
+                
+                <label for="birthday">Data de nascimento:</label><br>
+                <input type="date" id="birthday" name="birthday" max="2021-01-01"> <br><br>
+
+                <label for="descriptiom">Faça uma breve descrição de si:</label><br>
+                <textarea id="description" name="description" maxlength="100" rows="5" placeholder="Use no máximo 100 caracteres!"></textarea> <br><br>
+
+                <input type="submit"> 
+
+            </form>
+        </div>
+    </body>
+</html>
