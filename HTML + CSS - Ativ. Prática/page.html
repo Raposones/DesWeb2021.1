@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <style>
+            .center{
+                text-align: center;
+            }
+            .bg{
+                background-color: rgba(26, 16, 94, 0.90);
+                margin: auto;
+                width: 35%;
+                border: 1px solid black;
+                padding: 10px;
+            }
+
+            html{
+                background: url(img/01.jpg) ;
+                background-size: cover;
+            }
+            h1,h3, label{
+                color: aliceblue;
+            }
+            .button{
+                background-color: rgb(143, 199, 60);
+                margin: auto;
+                text-align: center;
+                padding: 10px 30px;
+                color: white;
+                width: 100%;
+                display: inline-block;
+                cursor: pointer;
+                transition-duration: 0.4s;
+            }
+            .button:hover{
+                background-color: rgb(12, 151, 12);
+                color: white;
+            }
+        </style>
+        <title>CSS Intro</title>
+    </head>
+    <body>
+        <div class="center">
+            <h1>Projeto adaptado - Des. Web</h1>
+            <h3>Exemplo de formulário de pesquisa (<i>Survey</i>)</h3>
+        </div>
+
+        <div class="bg"> 
+            <label for="name">Nome: </label><br>
+            <input type="text" id="name" size="50" placeholder="Digite seu nome"><br><br>
+            
+            <label for="age">Idade: </label><br>
+            <input type="number" id="age" min="0" max="100" placeholder="Idade"><br><br>
+
+            <label for="email">Email: </label><br>
+            <input type="email" id="email" size="50" placeholder="exemplo@exemplo.com"><br><br>
+
+            <label for="info">Qual a opção que melhor descreve seu estado atual? </label><br>
+            <select name="estados">
+                <option value="Estudante">Estudante</option>
+                <option value="CLT">CLT</option>
+                <option value="Outro">Outro</option>
+                <option value="Prefiro não dizer">Prefiro não dizer</option>
+            </select>
+            <br><br>
+
+            <label for="recommendation">Você recomendaria este projeto?</label><br>
+            <input type="radio" id="yes" name="recommendation" value="yes">
+            <label for="yes">Sim</label><br>
+            <input type="radio" id="no" name="recommendation" value="no">
+            <label for="no">Não</label><br>
+            <input type="radio" id="idk" name="recommendation" value="idk">
+            <label for="idk">Não sei</label><br><br>
+
+            <label for="check">O que gostaria de melhorar? (Selecione livremente)</label><br>
+            <input type="checkbox" id="time" value="time">
+            <label for="time">Mais tempo para estudar</label><br>
+            <input type="checkbox" id="knowledge" value="knowledge">
+            <label for="knowledge">Melhorar meu conhecimento</label><br>
+            <input type="checkbox" id="relax" value="relax">
+            <label for="relax">Aproveitar melhor o tempo para relaxar</label><br>
+            <input type="checkbox" id="ti" value="ti">
+            <label for="ti">Aprender novas tecnologias</label><br>
+            <input type="checkbox" id="lol" value="lol">
+            <label for="lol">Subir o elo no League of Legends</label><br><br>
+
+            
+            <label for="comments">Algum comentário/sugestão?:</label><br>
+            <textarea id="comments" maxlength="200" rows="5" cols="50" placeholder="Use no máximo 200 caracteres!"></textarea> <br><br>
+
+            <button class="button">Enviar</button>
+
+        </div>
+    </body>
+</html>
