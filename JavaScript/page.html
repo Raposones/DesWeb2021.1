@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <style>
+            .center{
+                text-align: center;
+        }
+        html{
+            background-color: rgb(8, 8, 121);
+        }
+        .button{
+                background-color: rgb(147, 28, 245);
+                margin: auto;
+                text-align: center;
+                padding: 10px 15px;
+                color: white;
+                display: inline-block;
+                cursor: pointer;
+                transition-duration: 0.4s;
+        }
+        .button:hover{
+                background-color: rgb(108, 20, 180);
+                color: white;
+            }
+        .block{
+            background-color: rgba(30, 190, 230, 0.9);
+            margin: auto;
+            width: 70%;
+            border: 1px solid black;
+            padding: 5px;
+            cursor: pointer;
+            transition-duration: 0.4s;
+        }
+        .block:hover{
+            background-color: rgba(23, 152, 184, 0.9);
+        }
+        .delbutton{
+            background-color: rgb(209, 41, 41);
+        }
+        </style>
+        <title>TDTL - To-Do Tasks List</title>
+    </head>
+    <body>
+        <div class="center">
+            <h1 style="color: aliceblue;">Tarefas a fazer (To-do Tasks List)</h1>
+            <p style="color:rgb(147, 28, 245)">Adicione uma atividade à lista descrevendo-a <strong>brevemente</strong></p>
+            <p style="color: rgb(40, 241, 40);">Clique em uma atividade da lista para marcá-la como concluida</p>
+            <p style="color:red">Clique no X para remover uma atividade</p>
+
+            <input type="text" placeholder="Descrição da atividade..." size="100" id="task" maxlength="70" onkeydown="enter()">
+            <button class="button" onclick='taskadd()'>Adicionar</button>
+
+            <br><br>
+
+            <div id="tasklist"></div>
+        </div>
+
+
+        <script>
+            tasknum = 0
+            delnum = 0
+
+
+            function taskadd(){
+                var text = document.getElementById("task").value;
+
+                if(text == ""){
+                    alert("Digite alguma coisa!")
+                }
+
+                else{
+                    document.getElementById("tasklist").innerHTML +=
+                    "<div class = block id='" + tasknum + "' onclick='taskdone(this.id)'>" + " <p>" + document.getElementById("task").value + "</p>" +
+                    "<button class='delbutton' id='" + delnum + "' onclick='taskdel(this.id)'>X</button></div><br>";
+                    tasknum += 1;
+                    delnum += 1;
+                }
+            }
+
+            function taskdel(id){
+                var elem = document.getElementById(id);
+                return elem.parentNode.removeChild(elem);
+            }
+
+            function taskdone(id){
+                var elem = document.getElementById(id);
+                elem.style.backgroundColor = 'rgb(40, 241, 40)'
+            }
+            function enter(){
+                if(event.keyCode == 13){
+                    taskadd();
+                }
+            }
+        </script>
+    </body>
+</html>
